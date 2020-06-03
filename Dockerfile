@@ -7,8 +7,8 @@ RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkh
 RUN dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb
 RUN sed -ie 's/# zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen
 RUN locale-gen
-RUN mkdir /usr/share/fonts/truetype/deng/
-ADD ./fonts/*.ttf /usr/share/fonts/truetype/deng/
+RUN mkdir /usr/share/fonts/truetype/siyuan/
+ADD ./fonts/*.ttf /usr/share/fonts/truetype/siyuan/
 RUN fc-cache -vf
 RUN fc-list
 ENV LANG zh_CN.UTF-8
