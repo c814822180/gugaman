@@ -1,7 +1,10 @@
 FROM openjdk:11
 
 RUN apt-get -q update
-RUN apt -f -y install xfonts-base xfonts-75dpi libxrender1 libxext6 libxcb1 libx11-6 libjpeg62-turbo locales unzip xvfb libxi6 libgconf-2-4
+RUN apt -f -y install xfonts-base xfonts-75dpi libxrender1 libxext6 libxcb1 libx11-6 libjpeg62-turbo locales unzip xvfb libxi6 libgconf-2-4 \
+        xdg-utils  libxss1 libxrandr2 libxcursor1 libxcomposite1 libpangocairo-1.0-0 libpango-1.0-0 libnss3 \
+        libnspr4 libgtk-3-0 libgdk-pixbuf2.0-0 libgbm1 libcups2 libcairo2 libatspi2.0-0 libatk1.0-0 libatk-bridge2.0-0 \
+        libasound2 libappindicator3-1 fonts-liberation libxtst6
 RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb
 RUN dpkg -i wkhtmltox_0.12.5-1.stretch_amd64.deb
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
