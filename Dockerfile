@@ -1,5 +1,7 @@
 FROM openjdk:11
 
+ADD sources.list ./sources.list
+RUN mv /etc/apt/sources.list && cp ./sources.list /etc/apt/
 RUN apt-get -q update
 RUN apt -f -y install xfonts-base xfonts-75dpi libxrender1 libxext6 libxcb1 libx11-6 libjpeg62-turbo locales unzip xvfb libxi6 libgconf-2-4 \
         xdg-utils  libxss1 libxrandr2 libxcursor1 libxcomposite1 libpangocairo-1.0-0 libpango-1.0-0 libnss3 \
