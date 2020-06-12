@@ -23,3 +23,4 @@ ENV LANG zh_CN.UTF-8
 
 
 CMD ["/bin/bash"]
+
