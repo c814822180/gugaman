@@ -16,7 +16,8 @@ RUN unzip chromedriver_linux64.zip && rm chromedriver_linux64.zip && mv -f chrom
 RUN sed -ie 's/# zh_CN.UTF-8 UTF-8/zh_CN.UTF-8 UTF-8/g' /etc/locale.gen
 RUN locale-gen
 RUN mkdir /usr/share/fonts/truetype/siyuan/
-ADD ./fonts/*.ttc /usr/share/fonts/truetype/siyuan/
+RUN wget --content-disposition  http://space1993.club:10080/s/UKkHulKgrAWnsBF/download && tar -xzvf fonts.tar -C /usr/share/fonts/truetype/siyuan/
+#ADD ./fonts/*.ttc /usr/share/fonts/truetype/siyuan/
 RUN fc-cache -vf
 RUN fc-list
 ENV LANG zh_CN.UTF-8
